@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.min.css">
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <!-- Latest compiled and minified CSS & JS -->
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div id="top">
+            <section class="container">
+                <!-- <div class="header__info"> -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  header__info">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="header__info-phone-mail">
+                                <div class="header__info-phone">
+                                    <i class="fas fa-phone-alt icon-blue"></i>
+                                    <div class="phone">Phone</div>
+                                    <span class="phone-number">010-020-0340</span>
+                                </div>
+                                <div class="header__info-mail">
+                                    <i class="far fa-envelope icon-blue icon-mail"></i>
+                                    Email
+                                    <a href="" class="email-address">tunguyen@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="header__info-social">
+                                <div class="bold">Meet us on</div>
+                                <a href="" class="link-social"><i class="fab fa-facebook-f icon-social"></i></a>
+                                <a href="" class="link-social"><i class="fab fa-instagram icon-social"></i></a>
+                                <a href="" class="link-social"><i class="fab fa-twitter icon-social"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+
+            </section>
+            <!-- NAV -->
+            <section class="nav-bar-fullwidth">
+                <div class="container">
+                    <!-- <nav class="nav-bar"> -->
+                    <div class="row nav-bar">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <a href="" class="navbar-brand">Awesome</a>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            <ul class="list">
+                                <li class="list-item"><a href="#top" class="nav-link">HOME</a></li>
+                                <li class="list-item"><a href="" class="nav-link">ABOUT</a></li>
+                                <li class=" list-item"><a href="" class="nav-link">TEAM</a></li>
+                                <li class=" list-item"><a href="" class="nav-link">SERVICE</a></li>
+                                <li class=" list-item"><a href="" class="nav-link">PORTFOLIO</a></li>
+                                <li class=" list-item"><a href="" class="nav-link">CONTACT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 
+                    </nav> -->
+                </div>
+            </section>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding: 0">
+                <section class="home">
+                    <div class="blurred"></div>
+                    <div class="text-home">
+                        We make templates that are
+                        <span>awesome</span>
+                    </div>
+                    <div id="container">
+                        <div id="text"></div>
+                        <div id="cursor"></div>
+                    </div>
+                    <a href="" class="btn">GET STARTED</a>
+                </section>
+            </div>
+
+            <!-- Nav toggle mobile -->
+            <div class="topnav" id="myTopnav">
+                <a href="#home" class="active">Home</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="about">
+            <section class="about">
+
+            </section>
+        </div>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        var _CONTENT = [
+            "Hello, welcome to my project",
+            "Hope you like it",
+        ];
+
+        // Current sentence being processed
+        var _PART = 0;
+
+        // Character number of the current sentence being processed 
+        var _PART_INDEX = 0;
+
+        // Holds the handle returned from setInterval
+        var _INTERVAL_VAL;
+
+        // Element that holds the text
+        var _ELEMENT = document.querySelector("#text");
+
+        // Cursor element 
+        var _CURSOR = document.querySelector("#cursor");
+
+        // Implements typing effect
+        function Type() {
+            // Get substring with 1 characater added
+            var text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+            _ELEMENT.innerHTML = text;
+            _PART_INDEX++;
+
+            // If full sentence has been displayed then start to delete the sentence after some time
+            if (text === _CONTENT[_PART]) {
+                // Hide the cursor
+                _CURSOR.style.display = 'none';
+
+                clearInterval(_INTERVAL_VAL);
+                setTimeout(function () {
+                    _INTERVAL_VAL = setInterval(Delete, 50);
+                }, 1000);
+            }
+        }
+
+        // Implements deleting effect
+        function Delete() {
+            // Get substring with 1 characater deleted
+            var text = _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+            _ELEMENT.innerHTML = text;
+            _PART_INDEX--;
+
+            // If sentence has been deleted then start to display the next sentence
+            if (text === '') {
+                clearInterval(_INTERVAL_VAL);
+
+                // If current sentence was last then display the first one, else move to the next
+                if (_PART == (_CONTENT.length - 1))
+                    _PART = 0;
+                else
+                    _PART++;
+
+                _PART_INDEX = 0;
+
+                // Start to display the next sentence after some time
+                setTimeout(function () {
+                    _CURSOR.style.display = 'inline-block';
+                    _INTERVAL_VAL = setInterval(Type, 100);
+                }, 200);
+            }
+        }
+
+        // Start the typing effect on load
+        _INTERVAL_VAL = setInterval(Type, 100);
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+    <script src=" //code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -391,10 +391,10 @@ a {
 }
 .social-icons.size-sm a
 {
-  line-height:34px;
-  height:34px;
-  width:34px;
-  font-size:14px
+  line-height:50px;
+  height:50px;
+  width:50px;
+  font-size:20px
 }
 .social-icons a.facebook:hover
 {
@@ -404,13 +404,9 @@ a {
 {
   background-color:#00aced
 }
-.social-icons a.linkedin:hover
+.social-icons a.instagram:hover
 {
   background-color:#007bb6
-}
-.social-icons a.dribbble:hover
-{
-  background-color:#ea4c89
 }
 @media (max-width:767px)
 {
@@ -421,4 +417,73 @@ a {
     font-weight:600
   }
 }
+
+.icon-zalopay {
+  width: 54px;
+  height: 33px;
+  background-image: url(../img/img_icon/zalopay.png);
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 7px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon {
+  width: 54px;
+  height: 33px;
+  background-image: url(../img/img_icon/logopayment.png);
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 7px;
+}
+
+.icon-visa {
+  background-position: -198px -155px;
+}
+
+.icon-master {
+  background-position: -207px -200px;
+}
+
+.icon-jcb {
+  background-position: -139px -155px;
+}
+
+.icon-cash {
+  background-position: -264px -104px;
+}
+
+.icon-internet-banking {
+  background-position: -257px -155px;
+}
+
+.icon-vnpay {
+  background-image: url(../img/img_icon/logo-vnpay.png);
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 7px;
+  background-repeat: no-repeat;
+  background-size: 50px 29px;
+}
+
+.icon-momo {
+  width: 54px;
+  height: 33px;
+  background-image: url(../img/img_icon/logo-momo.jpg);
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 7px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
 /* --footer */
+
